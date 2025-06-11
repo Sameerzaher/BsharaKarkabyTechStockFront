@@ -82,6 +82,39 @@
   margin: 0;
 }
 
+/* Hero Actions */
+.hero-actions {
+  margin-top: 3rem;
+  text-align: center;
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.primary-btn:hover {
+  background: linear-gradient(135deg, #44a08d 0%, #4ecdc4 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(78, 205, 196, 0.4);
+}
+
+.primary-btn:active {
+  transform: translateY(-1px);
+}
+
 /* Section Styles */
 .about-section,
 .features-section,

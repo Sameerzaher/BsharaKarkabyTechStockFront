@@ -6,13 +6,33 @@ const Header = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-    setUser(storedUser ? JSON.parse(storedUser) : null);
+    const checkUser = () => {
+      const storedUser = localStorage.getItem('user');
+      setUser(storedUser ? JSON.parse(storedUser) : null);
+    };
+
+    // Check user on mount
+    checkUser();
+
+    // Listen for storage changes
+    window.addEventListener('storage', checkUser);
+    
+    // Custom event listener for same-tab updates
+    window.addEventListener('userChanged', checkUser);
+
+    return () => {
+      window.removeEventListener('storage', checkUser);
+      window.removeEventListener('userChanged', checkUser);
+    };
   }, []);
 
   const handleLogout = () => {
     localStorage.removeItem('user');
     setUser(null); // עדכון מצב
+    
+    // Dispatch custom event to update header
+    window.dispatchEvent(new Event('userChanged'));
+    
     navigate('/login');
   };
 

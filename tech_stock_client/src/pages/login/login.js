@@ -19,6 +19,9 @@ const Login = () => {
       // שמירת המשתמש ב-localStorage
       localStorage.setItem('user', JSON.stringify(res.data.user));
 
+      // Dispatch custom event to update header
+      window.dispatchEvent(new Event('userChanged'));
+
       // מעבר לדף הבית
       navigate('/');
     } catch (err) {

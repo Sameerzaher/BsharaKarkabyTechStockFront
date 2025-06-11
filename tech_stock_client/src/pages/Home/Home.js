@@ -55,6 +55,14 @@ const Home = () => {
                 <p>Data Security</p>
               </div>
             </div>
+            <div className="hero-actions">
+              <button 
+                className="primary-btn"
+                onClick={() => navigate('/products')}
+              >
+                📦 Manage Products
+              </button>
+            </div>
           </div>
         </section>
 
