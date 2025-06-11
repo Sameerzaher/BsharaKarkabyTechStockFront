@@ -1,0 +1,283 @@
+/* Product Management Page Styles */
+.product-management {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem 0;
+}
+
+.product-management h2 {
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.product-management > button {
+  display: block;
+  margin: 0 auto 2rem;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.product-management > button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+  background: linear-gradient(135deg, #45a049 0%, #4CAF50 100%);
+}
+
+.product-management > button:active {
+  transform: translateY(-1px);
+}
+
+/* No Products Message */
+.product-management > p {
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  margin: 3rem 0;
+  opacity: 0.9;
+}
+
+/* Table Container */
+.product-table {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* Table Header */
+.product-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.product-table th {
+  color: white;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Table Body */
+.product-table tbody tr {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.product-table tbody tr:hover {
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+  transform: scale(1.01);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.product-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.product-table td {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Product Image Styling */
+.product-table td img {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.product-table td img:hover {
+  transform: scale(1.1);
+}
+
+/* Action Buttons */
+.product-table td button {
+  margin: 0 0.3rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Delete Button */
+.product-table td button:first-child {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+.product-table td button:first-child:hover {
+  background: linear-gradient(135deg, #ee5a5a 0%, #ff6b6b 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+/* Edit Button */
+.product-table td button:last-child {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(78, 205, 196, 0.3);
+}
+
+.product-table td button:last-child:hover {
+  background: linear-gradient(135deg, #44a08d 0%, #4ecdc4 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(78, 205, 196, 0.4);
+}
+
+/* Price Styling */
+.product-table td:nth-child(4) {
+  font-weight: 600;
+  color: #4CAF50;
+  font-size: 1rem;
+}
+
+/* Stock Styling */
+.product-table td:nth-child(5) {
+  font-weight: 600;
+}
+
+/* Stock Color Coding */
+.product-table tbody tr td:nth-child(5) {
+  position: relative;
+}
+
+.product-table tbody tr td:nth-child(5)::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .product-table {
+    width: 98%;
+  }
+  
+  .product-table th,
+  .product-table td {
+    padding: 1rem 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-management {
+    padding: 1rem 0;
+  }
+  
+  .product-management h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .product-management > button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .product-table {
+    width: 99%;
+    border-radius: 15px;
+  }
+  
+  .product-table th,
+  .product-table td {
+    padding: 0.8rem 0.3rem;
+    font-size: 0.8rem;
+  }
+  
+  .product-table td button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    margin: 0.1rem;
+  }
+  
+  .product-table td img {
+    height: 40px !important;
+    width: 40px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-management h2 {
+    font-size: 1.5rem;
+  }
+  
+  .product-table th,
+  .product-table td {
+    padding: 0.6rem 0.2rem;
+    font-size: 0.75rem;
+  }
+  
+  .product-table td button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+  }
+  
+  /* Stack buttons vertically on very small screens */
+  .product-table td:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: center;
+  }
+} 

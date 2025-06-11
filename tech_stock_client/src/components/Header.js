@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const navigate = useNavigate();
-  const user = localStorage.getItem('user');
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    setUser(storedUser ? JSON.parse(storedUser) : null);
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem('user');
+    setUser(null); // עדכון מצב
     navigate('/login');
   };
 
@@ -15,7 +21,11 @@ const Header = () => {
       <h1>TechStock</h1>
       <nav>
         <Link to="/">Home</Link>
-        {user && <Link to="/add-product">Add Product</Link>}
+        {user && (
+          <>
+            <Link to="/products">Manage Products</Link>
+          </>
+        )}
         {!user ? (
           <>
             <Link to="/login">Login</Link>
